@@ -1,0 +1,475 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="LaTex 数学公式" /><meta property="og:locale" content="en" /><meta name="description" content="[toc]" /><meta property="og:description" content="[toc]" /><link rel="canonical" href="/language/latex/posts/latex_math/" /><meta property="og:url" content="/language/latex/posts/latex_math/" /><meta property="og:site_name" content="Chai Yan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-08-25T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="LaTex 数学公式" /><meta name="twitter:site" content="@twitter_username" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-25T00:00:00+08:00","datePublished":"2021-08-25T00:00:00+08:00","description":"[toc]","headline":"LaTex 数学公式","mainEntityOfPage":{"@type":"WebPage","@id":"/language/latex/posts/latex_math/"},"url":"/language/latex/posts/latex_math/"}</script><title>LaTex 数学公式 | Chai Yan</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Chai Yan"><meta name="application-name" content="Chai Yan"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Chai Yan</a></div><div class="site-subtitle font-italic">Personal technical blog, recording interesting things.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/chaiyan0216" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['chaiyan2046','163.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>LaTex 数学公式</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>LaTex 数学公式</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1629820800" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Aug 25, 2021 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://github.com/chaiyao0216">Chai Yan</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="3511 words"> <em>19 min</em> read</span></div></div></div><div class="post-content"><p>[toc]</p><h3 id="一ams-宏集"><span class="mr-2">一、AMS 宏集</span><a href="#一ams-宏集" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>AMS 宏集是美国数学学会 (American Mathematical Society) 提供的对 LaTex 原生数学公式排版的扩展，其核心是 <strong>amsmath</strong> 宏包，对多行公式的排版提供了有力的支持。此外，<strong>amsfonts</strong> 宏包以及基于它的 <strong>amssymb</strong> 宏包提供了丰富的数学符号；<strong>amsthm</strong> 宏包扩展了 LaTex 定理证明格式。</p><h3 id="二公式排版基础"><span class="mr-2">二、公式排版基础</span><a href="#二公式排版基础" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><strong>行内公式和行间公式</strong></p><p>数学公式有两种排版方式：其一是与文字混排，称为行内公式；其二是单独列为一行排版，称为行间公式。</p><p>行内公式由一对 $ 符号包裹：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre>The Pythagorean theorem is
+<span class="p">$</span><span class="nb">a</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> b</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> c</span><span class="p">^</span><span class="m">2</span><span class="p">$</span>.
+</pre></table></code></div></div><p>行间公式由 equation 环境包裹。equation 环境为公式自动生成一个编号，这个编号可以用 <code class="language-plaintext highlighter-rouge">\label</code> 和 <code class="language-plaintext highlighter-rouge">\ref</code> 生成交叉引用，amsmath 的 <code class="language-plaintext highlighter-rouge">\eqref</code> 命令则为引用自动加上圆括号；还可以用 <code class="language-plaintext highlighter-rouge">\tag</code> 命令手动修改公式的编号，或者用 <code class="language-plaintext highlighter-rouge">\notag</code> 命令取消为公式编号。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre>The Pythagorean theorem is:
+<span class="nt">\begin{equation}</span>
+a<span class="p">^</span>2 + b<span class="p">^</span>2 = c<span class="p">^</span>2 <span class="k">\label</span><span class="p">{</span>pythagorean<span class="p">}</span>
+<span class="nt">\end{equation}</span>
+Equation <span class="k">\eqref</span><span class="p">{</span>pythagorean<span class="p">}</span> is
+called `Gougu theorem' in Chinese.
+
+It's wrong to say
+<span class="nt">\begin{equation}</span>
+1 + 1 = 3 <span class="k">\tag</span><span class="p">{</span>dumb<span class="p">}</span>
+<span class="nt">\end{equation}</span>
+or
+<span class="nt">\begin{equation}</span>
+1 + 1 = 4 <span class="k">\notag</span>
+<span class="nt">\end{equation}</span>
+</pre></table></code></div></div><p>如果需要直接使用不带编号的行间公式，则将公式用命令 <code class="language-plaintext highlighter-rouge">\[</code> 和 <code class="language-plaintext highlighter-rouge">\]</code> 包裹，与之等效的是 displaymath 环境。有的人更喜欢 equation* 环境，体现了带星号和不带星号的环境之间的区别。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">\begin{equation*}</span>
+a<span class="p">^</span>2 + b<span class="p">^</span>2 = c<span class="p">^</span>2
+<span class="nt">\end{equation*}</span>
+For short:
+<span class="p">\[</span><span class="nb"> a</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">+</span><span class="nb"> b</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> c</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="p">\]</span>
+Or if you like the long one:
+<span class="nt">\begin{displaymath}</span>
+a<span class="p">^</span>2 + b<span class="p">^</span>2 = c<span class="p">^</span>2
+<span class="nt">\end{displaymath}</span>
+</pre></table></code></div></div><p>为了与文字相适应，行内公式在排版大的公式元素（分式、巨算符等）时显得很“局促”，以下是对比：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre>In text:
+<span class="p">$</span><span class="nv">\lim</span><span class="p">_{</span><span class="nb">n </span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\infty</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\frac</span><span class="p">{</span><span class="m">1</span><span class="p">}{</span><span class="nb">k</span><span class="p">^</span><span class="m">2</span><span class="p">}</span><span class="nb">
+</span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">^</span><span class="m">2</span><span class="p">}{</span><span class="m">6</span><span class="p">}$</span>.
+
+In display:
+<span class="p">\[</span><span class="nb">
+</span><span class="nv">\lim</span><span class="p">_{</span><span class="nb">n </span><span class="nv">\to</span><span class="nb"> </span><span class="nv">\infty</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\frac</span><span class="p">{</span><span class="m">1</span><span class="p">}{</span><span class="nb">k</span><span class="p">^</span><span class="m">2</span><span class="p">}</span><span class="nb">
+</span><span class="o">=</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">^</span><span class="m">2</span><span class="p">}{</span><span class="m">6</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+</pre></table></code></div></div><p><strong>数学模式</strong></p><p>当用户使用 $ 开启行内公式输入，或是使用 <code class="language-plaintext highlighter-rouge">\[</code> 命令、equation 环境时，LaTex 就进入了数学模式。数学模式相比于文本模式有以下特点：</p><ul><li><strong>空格被忽略</strong>，数学符号的间距默认由符号的性质（关系符号、运算符等）决定。需要人为引入间距时，使用 <code class="language-plaintext highlighter-rouge">\quad</code> 和 <code class="language-plaintext highlighter-rouge">\qquad</code> 等命令。<li><strong>不允许有空行</strong>（分段），行间公式中也无法用 <code class="language-plaintext highlighter-rouge">\\</code> 命令手动换行。<li>所有的字母被当作数学公式中的变量处理，字母间距与文本模式不一致，也无法生成单词之间的空格。如果想在数学公式中输入正体的文本，简单情况下可用 <code class="language-plaintext highlighter-rouge">\mathrm</code> 命令，或者用 amsmath 提供的 <code class="language-plaintext highlighter-rouge">\text</code> 命令。</ul><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="p">$</span><span class="nb">x</span><span class="p">^{</span><span class="m">2</span><span class="p">}</span><span class="nb"> </span><span class="nv">\geq</span><span class="nb"> </span><span class="m">0</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">for </span><span class="nv">\textbf</span><span class="p">{</span><span class="nb">all</span><span class="p">}</span><span class="nb"> </span><span class="p">}</span><span class="nb"> x </span><span class="nv">\in</span><span class="nb"> </span><span class="nv">\mathbb</span><span class="p">{</span><span class="nb">R</span><span class="p">}$</span>
+</pre></table></code></div></div><h3 id="三数学符号"><span class="mr-2">三、数学符号</span><a href="#三数学符号" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>LaTex 默认提供了常用的数学符号，amssymb 宏包提供了一些次常用的符号。</p><p><strong>一般符号</strong></p><p>希腊字母符号的名称就是其英文名称，如 α (\alpha)、β (\beta) 等等。大写的希腊字母为首字母大写的命令，如 Γ (\Gamma)、∆ (\Delta) 等等。</p><p><img data-src="/images/latex/greece_symbol.png" alt="greece_symbol" style="zoom:50%;" data-proofer-ignore></p><p>无穷大符号为 ∞ (\infty)，等等。</p><p><img data-src="/images/latex/other_symbol.png" alt="other_symbol" style="zoom:50%;" data-proofer-ignore></p><p>省略号：. . . (\dots) 和 · · · (\cdots) ，以及竖排的 (\vdots) 和斜排的 (\ddots)。</p><p><strong>指数、上下标和导数</strong></p><p>用 ^ 和 _ 标明上下标，上下标的内容（子公式）一般需要用花括号包裹，否则上下标只对后面的一个符号起作用。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="p">$</span><span class="nb">p</span><span class="p">^</span><span class="m">3</span><span class="p">_{</span><span class="nb">ij</span><span class="p">}</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb">
+m</span><span class="p">_</span><span class="nv">\mathrm</span><span class="p">{</span><span class="nb">Knuth</span><span class="p">}</span><span class="nv">\qquad</span><span class="nb">
+</span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">k</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="m">3</span><span class="nb"> k </span><span class="p">$</span><span class="k">\\</span><span class="na">[5pt]</span>
+<span class="p">$</span><span class="nb">a</span><span class="p">^</span><span class="nb">x</span><span class="o">+</span><span class="nb">y </span><span class="nv">\neq</span><span class="nb"> a</span><span class="p">^{</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="p">}</span><span class="nv">\qquad</span><span class="nb">
+e</span><span class="p">^{</span><span class="nb">x</span><span class="p">^</span><span class="m">2</span><span class="p">}</span><span class="nb"> </span><span class="nv">\neq</span><span class="nb"> </span><span class="p">{</span><span class="nb">e</span><span class="p">^</span><span class="nb">x</span><span class="p">}^</span><span class="m">2</span><span class="p">$</span>
+</pre></table></code></div></div><p>导数符号 ‘ 是一类特殊的上标，可以适当连用表示多阶导数，也可以在其后连用上标：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="p">$</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> x</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> f'</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb">
+</span><span class="o">=</span><span class="nb"> </span><span class="m">2</span><span class="nb">x </span><span class="nv">\quad</span><span class="nb"> f''</span><span class="p">^{</span><span class="m">2</span><span class="p">}</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">4</span><span class="p">$</span>
+</pre></table></code></div></div><p><strong>分式和根式</strong></p><p>分式使用 <code class="language-plaintext highlighter-rouge">\frac{分子}{分母}</code> 来书写。分式的大小在行间公式中是正常大小，而在行内 极度压缩。amsmath 提供了方便的命令 <code class="language-plaintext highlighter-rouge">\dfrac</code> 和 <code class="language-plaintext highlighter-rouge">\tfrac</code>，令用户能够在行内使用正常大小的分式，或是反过来。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>In display style:
+<span class="p">\[</span><span class="nb">
+</span><span class="m">3</span><span class="o">/</span><span class="m">8</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb"> </span><span class="nv">\frac</span><span class="p">{</span><span class="m">3</span><span class="p">}{</span><span class="m">8</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\qquad</span><span class="nb"> </span><span class="nv">\tfrac</span><span class="p">{</span><span class="m">3</span><span class="p">}{</span><span class="m">8</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+In text style:
+<span class="p">$</span><span class="m">1</span><span class="nv">\frac</span><span class="p">{</span><span class="m">1</span><span class="p">}{</span><span class="m">2</span><span class="p">}$</span>~hours <span class="k">\qquad</span>
+<span class="p">$</span><span class="m">1</span><span class="nv">\dfrac</span><span class="p">{</span><span class="m">1</span><span class="p">}{</span><span class="m">2</span><span class="p">}$</span>~hours
+</pre></table></code></div></div><p>根式使用 <code class="language-plaintext highlighter-rouge">\sqrt{...}</code>，表示 n 次方根时写成 <code class="language-plaintext highlighter-rouge">\sqrt[n]{...}</code>。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="p">$</span><span class="nv">\sqrt</span><span class="p">{</span><span class="nb">x</span><span class="p">}</span><span class="nb"> </span><span class="nv">\Leftrightarrow</span><span class="nb"> x</span><span class="p">^{</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="p">{</span><span class="m">2</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nb">x</span><span class="p">^{</span><span class="m">2</span><span class="p">}</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="nv">\sqrt</span><span class="p">{</span><span class="nb">y</span><span class="p">}}$</span>
+</pre></table></code></div></div><p>特殊的分式形式，如二项式结构，由 amsmath 宏包的 <code class="language-plaintext highlighter-rouge">\binom</code> 命令生成：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre>Pascal's rule is
+<span class="p">\[</span><span class="nb">
+</span><span class="nv">\binom</span><span class="p">{</span><span class="nb">n</span><span class="p">}{</span><span class="nb">k</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nv">\binom</span><span class="p">{</span><span class="nb">n</span><span class="o">-</span><span class="m">1</span><span class="p">}{</span><span class="nb">k</span><span class="p">}</span><span class="nb">
+</span><span class="o">+</span><span class="nb"> </span><span class="nv">\binom</span><span class="p">{</span><span class="nb">n</span><span class="o">-</span><span class="m">1</span><span class="p">}{</span><span class="nb">k</span><span class="o">-</span><span class="m">1</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+</pre></table></code></div></div><p><strong>关系符</strong></p><p>常见的关系符号除了可以直接输入的 =，&gt;，&lt;，其它符号用命令输入，常用的有不等号 <code class="language-plaintext highlighter-rouge">\ne</code>、大于等于号 <code class="language-plaintext highlighter-rouge">≥ (\ge)</code> 和小于等于号 <code class="language-plaintext highlighter-rouge">≤ (\le)</code>、约等号 <code class="language-plaintext highlighter-rouge">≈ (\approx)</code>、等价<code class="language-plaintext highlighter-rouge"> ≡ (\equiv)</code>、正比 <code class="language-plaintext highlighter-rouge">∝ (\propto)</code>、相似 <code class="language-plaintext highlighter-rouge">∼ (\sim)</code> 等等。</p><p>LaTex 还提供了自定义二元关系符的命令 <code class="language-plaintext highlighter-rouge">\stackrel</code>，用于将一个符号叠加在原有的二元关系符之上：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb">
+f</span><span class="p">_</span><span class="nb">n</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="nv">\stackrel</span><span class="p">{</span><span class="o">*</span><span class="p">}{</span><span class="nv">\approx</span><span class="p">}</span><span class="nb"> </span><span class="m">1</span><span class="nb"> 
+f</span><span class="p">_</span><span class="nb">n</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nb"> </span><span class="nv">\stackrel</span><span class="p">{</span><span class="nv">\ne</span><span class="p">}{</span><span class="nv">\approx</span><span class="p">}</span><span class="nb"> </span><span class="m">1</span><span class="nb">
+</span><span class="p">\]</span>
+</pre></table></code></div></div><p><img data-src="/images/latex/binary_relation.png" alt="binary_relation" style="zoom:50%;" data-proofer-ignore></p><p><strong>算符</strong></p><p>算符大多数是二元算符，除了直接用键盘可以输入的 +、−、∗、/，其它符号用命令输入，常用的有乘号 <code class="language-plaintext highlighter-rouge">× (\times)</code>、除号 <code class="language-plaintext highlighter-rouge">÷ (\div)</code>、点乘 <code class="language-plaintext highlighter-rouge">· (\cdot)</code>、加减号 <code class="language-plaintext highlighter-rouge">± (\pm) / ∓ (\mp)</code> 、<code class="language-plaintext highlighter-rouge">∇ (\nabla)</code> 和 <code class="language-plaintext highlighter-rouge">∂ (\partial)</code> 等等。</p><p><img data-src="/images/latex/binary_calc.png" alt="binary_calc" style="zoom:50%;" data-proofer-ignore></p><p>LaTex 也将数学函数的名称作为一个算符排版，字体为直立字体。</p><p><img data-src="/images/latex/functions.png" alt="functions" style="zoom:50%;" data-proofer-ignore></p><p><strong>巨算符</strong></p><p>积分号 <code class="language-plaintext highlighter-rouge">\int</code>、求和号 <code class="language-plaintext highlighter-rouge">\sum</code> 等符号称为巨算符。</p><p><img data-src="/images/latex/giant_operator.png" alt="giant_operator" style="zoom:50%;" data-proofer-ignore></p><p>巨算符在行内公式和行间公式的大小和形状有区别。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre>In text:
+<span class="p">$</span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\int</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\oint</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\prod</span><span class="p">_</span><span class="nv">\epsilon</span><span class="nb"> </span><span class="p">$</span> <span class="k">\\</span>
+In display:
+<span class="p">\[</span><span class="nv">\sum</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\int</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\oint</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\prod</span><span class="p">_</span><span class="nv">\epsilon</span><span class="nb"> </span><span class="p">\]</span>
+</pre></table></code></div></div><p>巨算符的上下标位置可由 <code class="language-plaintext highlighter-rouge">\limits</code> 和 <code class="language-plaintext highlighter-rouge">\nolimits</code> 调整，前者令巨算符类似 lim 或求和算符上下标位于上下方；后者令巨算符类似积分号，上下标位于右上方和右下方。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre>In text:
+<span class="p">$</span><span class="nv">\sum\limits</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\int\limits</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\prod\limits</span><span class="p">_</span><span class="nv">\epsilon</span><span class="nb"> </span><span class="p">$</span> <span class="k">\\</span>
+In display:
+<span class="p">\[</span><span class="nv">\sum\nolimits</span><span class="p">_{</span><span class="nb">i</span><span class="o">=</span><span class="m">1</span><span class="p">}^</span><span class="nb">n </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\int\limits</span><span class="p">_</span><span class="m">0</span><span class="p">^{</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\pi</span><span class="p">}{</span><span class="m">2</span><span class="p">}}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+</span><span class="nv">\prod\nolimits</span><span class="p">_</span><span class="nv">\epsilon</span><span class="nb"> </span><span class="p">\]</span>
+</pre></table></code></div></div><p>amsmath 宏包还提供了 <code class="language-plaintext highlighter-rouge">\substack</code>，能够在下限位置书写多行表达式；subarray 环境更进 一步，令多行表达式可选择居中 (c) 或左对齐 (l)：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb">
+</span><span class="nv">\sum</span><span class="p">_{</span><span class="nv">\substack</span><span class="p">{</span><span class="m">0</span><span class="nv">\le</span><span class="nb"> i</span><span class="nv">\le</span><span class="nb"> n </span><span class="nv">\\</span><span class="nb">
+  j</span><span class="nv">\in</span><span class="nb"> </span><span class="nv">\mathbb</span><span class="p">{</span><span class="nb">R</span><span class="p">}}}</span><span class="nb">
+P</span><span class="o">(</span><span class="nb">i,j</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> Q</span><span class="o">(</span><span class="nb">n</span><span class="o">)</span><span class="nb">
+</span><span class="p">\]</span>
+<span class="p">\[</span><span class="nb">
+</span><span class="nv">\sum</span><span class="p">_{</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">subarray</span><span class="p">}{</span><span class="nb">l</span><span class="p">}</span><span class="nb">
+</span><span class="m">0</span><span class="nv">\le</span><span class="nb"> i</span><span class="nv">\le</span><span class="nb"> n </span><span class="nv">\\</span><span class="nb">
+  j</span><span class="nv">\in</span><span class="nb"> </span><span class="nv">\mathbb</span><span class="p">{</span><span class="nb">R</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">subarray</span><span class="p">}}</span><span class="nb">
+P</span><span class="o">(</span><span class="nb">i,j</span><span class="o">)</span><span class="nb"> </span><span class="o">=</span><span class="nb"> Q</span><span class="o">(</span><span class="nb">n</span><span class="o">)</span><span class="nb">
+</span><span class="p">\]</span>
+</pre></table></code></div></div><p><strong>重音和箭头</strong></p><p><img data-src="/images/latex/hats.png" alt="hats" style="zoom:50%;" data-proofer-ignore></p><p><img data-src="/images/latex/arrows.png" alt="arrows" style="zoom:50%;" data-proofer-ignore></p><p><img data-src="/images/latex/hat-arrows.png" alt="hat-arrows" style="zoom:50%;" data-proofer-ignore></p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="p">$</span><span class="nv">\bar</span><span class="p">{</span><span class="nb">x</span><span class="p">_</span><span class="m">0</span><span class="p">}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\bar</span><span class="p">{</span><span class="nb">x</span><span class="p">}_</span><span class="m">0</span><span class="p">$</span><span class="k">\\</span><span class="na">[5pt]</span>
+<span class="p">$</span><span class="nv">\vec</span><span class="p">{</span><span class="nb">x</span><span class="p">_</span><span class="m">0</span><span class="p">}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb"> </span><span class="nv">\vec</span><span class="p">{</span><span class="nb">x</span><span class="p">}_</span><span class="m">0</span><span class="p">$</span><span class="k">\\</span><span class="na">[5pt]</span>
+<span class="p">$</span><span class="nv">\hat</span><span class="p">{</span><span class="nv">\mathbf</span><span class="p">{</span><span class="nb">e</span><span class="p">}_</span><span class="nb">x</span><span class="p">}</span><span class="nb"> </span><span class="nv">\quad</span><span class="nb">
+ </span><span class="nv">\hat</span><span class="p">{</span><span class="nv">\mathbf</span><span class="p">{</span><span class="nb">e</span><span class="p">}}_</span><span class="nb">x</span><span class="p">$</span>
+ 
+<span class="p">$</span><span class="m">0</span><span class="nb">.</span><span class="nv">\overline</span><span class="p">{</span><span class="m">3</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb">
+</span><span class="nv">\underline</span><span class="p">{</span><span class="nv">\underline</span><span class="p">{</span><span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">}}$</span> <span class="k">\\</span><span class="na">[5pt]</span>
+<span class="p">$</span><span class="nv">\hat</span><span class="p">{</span><span class="nb">XY</span><span class="p">}</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb"> </span><span class="nv">\widehat</span><span class="p">{</span><span class="nb">XY</span><span class="p">}$</span><span class="k">\\</span><span class="na">[5pt]</span>
+<span class="p">$</span><span class="nv">\vec</span><span class="p">{</span><span class="nb">AB</span><span class="p">}</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb">
+</span><span class="nv">\overrightarrow</span><span class="p">{</span><span class="nb">AB</span><span class="p">}$</span>
+
+<span class="p">$</span><span class="nv">\underbrace</span><span class="p">{</span><span class="nv">\overbrace</span><span class="p">{</span><span class="o">(</span><span class="nb">a</span><span class="o">+</span><span class="nb">b</span><span class="o">+</span><span class="nb">c</span><span class="o">)</span><span class="p">}^</span><span class="m">6</span><span class="nb">
+</span><span class="nv">\cdot</span><span class="nb"> </span><span class="nv">\overbrace</span><span class="p">{</span><span class="o">(</span><span class="nb">d</span><span class="o">+</span><span class="nb">e</span><span class="o">+</span><span class="nb">f</span><span class="o">)</span><span class="p">}^</span><span class="m">7</span><span class="p">}</span><span class="nb">
+</span><span class="p">_</span><span class="nv">\text</span><span class="p">{</span><span class="nb">meaning of life</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="m">42</span><span class="p">$</span>
+</pre></table></code></div></div><p>amsmath 的 <code class="language-plaintext highlighter-rouge">\xleftarrow</code> 和 <code class="language-plaintext highlighter-rouge">\xrightarrow</code> 命令提供了长度可以伸展的箭头，并且可以为箭头增加上下标：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb"> a</span><span class="nv">\xleftarrow</span><span class="p">{</span><span class="nb">x</span><span class="o">+</span><span class="nb">y</span><span class="o">+</span><span class="nb">z</span><span class="p">}</span><span class="nb"> b </span><span class="p">\]</span>
+<span class="p">\[</span><span class="nb"> c</span><span class="nv">\xrightarrow</span><span class="o">[</span><span class="nb">x&lt;y</span><span class="o">]</span><span class="p">{</span><span class="nb">a</span><span class="o">*</span><span class="nb">b</span><span class="o">*</span><span class="nb">c</span><span class="p">}</span><span class="nb">d </span><span class="p">\]</span>
+</pre></table></code></div></div><p><strong>括号和定界符</strong></p><p><img data-src="/images/latex/braces.png" alt="braces" style="zoom:50%;" data-proofer-ignore></p><p>LaTex 提供了多种括号和定界符表示公式块的边界，如小括号 ()、中括号 []、大括号 {}({})、尖括号 ⟨⟩ (\langle \rangle)等。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="p">${</span><span class="nb">a,b,c</span><span class="p">}</span><span class="nb"> </span><span class="nv">\neq</span><span class="nb"> </span><span class="nv">\{</span><span class="nb">a,b,c</span><span class="nv">\}</span><span class="p">$</span>
+</pre></table></code></div></div><p>使用 <code class="language-plaintext highlighter-rouge">\left</code> 和 <code class="language-plaintext highlighter-rouge">\right</code> 命令可令括号（定界符）的大小可变，在行间公式中常用。LaTex 会自动根据括号内的公式大小决定定界符大小。<code class="language-plaintext highlighter-rouge">\left</code> 和 <code class="language-plaintext highlighter-rouge">\right</code> 必须成对使用。需要使用单个定界符时，另一个定界符写成 <code class="language-plaintext highlighter-rouge">\left.</code> 或 <code class="language-plaintext highlighter-rouge">\right.</code>。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="m">1</span><span class="nb"> </span><span class="o">+</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nv">\frac</span><span class="p">{</span><span class="m">1</span><span class="p">}{</span><span class="m">1</span><span class="o">-</span><span class="nb">x</span><span class="p">^{</span><span class="m">2</span><span class="p">}}</span><span class="nb">
+</span><span class="nv">\right</span><span class="o">)</span><span class="p">^</span><span class="m">3</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb">
+</span><span class="nv">\left</span><span class="nb">.</span><span class="nv">\frac</span><span class="p">{</span><span class="nv">\partial</span><span class="nb"> f</span><span class="p">}{</span><span class="nv">\partial</span><span class="nb"> t</span><span class="p">}</span><span class="nb">
+</span><span class="nv">\right</span><span class="nb">|</span><span class="p">_{</span><span class="nb">t</span><span class="o">=</span><span class="m">0</span><span class="p">}\]</span>
+</pre></table></code></div></div><h3 id="四多行公式"><span class="mr-2">四、多行公式</span><a href="#四多行公式" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><strong>长公式折行</strong></p><p>通常来讲应当避免写出超过一行而需要折行的长公式。如果一定要折行的话，习惯上优先在等号之前折行，其次在加号、减号之前，再次在乘号、除号之前。其它位置应当避免折行。</p><p>amsmath 宏包的 multline 环境提供了书写折行长公式的方便环境。它允许用 <code class="language-plaintext highlighter-rouge">\\</code> 折行，将公式编号放在最后一行。多行公式的首行左对齐，末行右对齐，其余行居中。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{multline}</span>
+a+b+c+d+e+f + g + h + i <span class="k">\\</span>
+= j + k + l + m + n <span class="k">\\</span>
+= o + p + q + r + s <span class="k">\\</span>
+=t+u+v+x+z
+<span class="nt">\end{multline}</span>
+</pre></table></code></div></div><p><strong>多行</strong></p><p>align 环境，它将公式用 &amp; 隔为两部分并对齐。分隔符通常放在等号左边：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">\begin{align}</span>
+a <span class="p">&amp;</span> = b + c <span class="k">\\</span>
+<span class="p">&amp;</span>=d+e
+<span class="nt">\end{align}</span>
+</pre></table></code></div></div><p>align 环境会给每行公式都编号。但可以用 <code class="language-plaintext highlighter-rouge">\notag</code> 去掉某行的编号：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">\begin{align}</span>
+a =<span class="p">{}</span> <span class="p">&amp;</span> b + c <span class="k">\\</span>
+  =<span class="p">{}</span> <span class="p">&amp;</span> d + e + f + g + h + i
+        + j + k + l <span class="k">\notag</span> <span class="k">\\</span>
+      <span class="p">&amp;</span> + m + n + o <span class="k">\\</span>
+  =<span class="p">{}</span> <span class="p">&amp;</span> p + q + r + s
+<span class="nt">\end{align}</span>
+</pre></table></code></div></div><p>align 还能够对齐多组公式，除等号前的 &amp; 之外，公式之间也用 &amp; 分隔：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">\begin{align}</span>
+a <span class="p">&amp;</span>=1  <span class="p">&amp;</span> b <span class="p">&amp;</span>=2  <span class="p">&amp;</span> c <span class="p">&amp;</span>=3 <span class="k">\\</span>
+d <span class="p">&amp;</span>=-1 <span class="p">&amp;</span> e <span class="p">&amp;</span>=-2 <span class="p">&amp;</span> f <span class="p">&amp;</span>=-5
+<span class="nt">\end{align}</span>
+</pre></table></code></div></div><p>如果不需要按等号对齐，只需罗列数个公式，gather 将是一个很好用的环境：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{gather}</span>
+a = b + c <span class="k">\\</span>
+d = e + f + g <span class="k">\\</span>
+h + i = j + k <span class="k">\notag</span> <span class="k">\\</span>
+l+m=n
+<span class="nt">\end{gather}</span>
+</pre></table></code></div></div><p><strong>公用编号</strong></p><p>另一个常见的需求是将多个公式组在一起公用一个编号，编号位于公式的居中位置。为此，amsmath 宏包提供了诸如 aligned、gathered 等环境，与 equation 环境套用。以 -ed 结尾的环境用法与不以 -ed 结尾的环境用法一一对应。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre><span class="nt">\begin{equation}</span>
+<span class="nt">\begin{aligned}</span>
+a <span class="p">&amp;</span>= b + c <span class="k">\\</span>
+d <span class="p">&amp;</span>= e + f + g <span class="k">\\</span>
+h + i <span class="p">&amp;</span>= j + k <span class="k">\\</span>
+l + m <span class="p">&amp;</span>= n
+<span class="nt">\end{aligned}</span>
+<span class="nt">\end{equation}</span>
+</pre></table></code></div></div><h3 id="五数组和矩阵"><span class="mr-2">五、数组和矩阵</span><a href="#五数组和矩阵" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>array 环境用来排版数组和矩阵，用法与 tabular 环境极为类似，也需要定义列格式，并用 \ 换行。数组可作为一个公式块，在外套用 <code class="language-plaintext highlighter-rouge">\left</code>、<code class="language-plaintext highlighter-rouge">\right</code> 等定界符：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb"> </span><span class="nv">\mathbf</span><span class="p">{</span><span class="nb">X</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left</span><span class="o">(</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">array</span><span class="p">}{</span><span class="nb">cccc</span><span class="p">}</span><span class="nb">
+x</span><span class="p">_{</span><span class="m">11</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">12</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">1</span><span class="nb">n</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+x</span><span class="p">_{</span><span class="m">21</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">22</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">2</span><span class="nb">n</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+</span><span class="nv">\vdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\vdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ddots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\vdots\\</span><span class="nb">
+x</span><span class="p">_{</span><span class="nb">n</span><span class="m">1</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="nb">n</span><span class="m">2</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="nb">nn</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">array</span><span class="p">}</span><span class="nb"> </span><span class="nv">\right</span><span class="o">)</span><span class="nb"> </span><span class="p">\]</span>
+</pre></table></code></div></div><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb"> |x| </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left\{</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">array</span><span class="p">}{</span><span class="nb">rl</span><span class="p">}</span><span class="nb">
+</span><span class="o">-</span><span class="nb">x </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x &lt; </span><span class="m">0</span><span class="nb">,</span><span class="nv">\\</span><span class="nb">
+</span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb">,</span><span class="nv">\\</span><span class="nb">
+x </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x &gt; </span><span class="m">0</span><span class="nb">.
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">array</span><span class="p">}</span><span class="nb"> </span><span class="nv">\right</span><span class="nb">. </span><span class="p">\]</span>
+</pre></table></code></div></div><p>上述例子也可以用 amsmath 提供的 cases 环境更轻松地完成:：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb"> |x| </span><span class="o">=</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">cases</span><span class="p">}</span><span class="nb">
+</span><span class="o">-</span><span class="nb">x </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x &lt; </span><span class="m">0</span><span class="nb">,</span><span class="nv">\\</span><span class="nb">
+</span><span class="m">0</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x </span><span class="o">=</span><span class="nb"> </span><span class="m">0</span><span class="nb">,</span><span class="nv">\\</span><span class="nb">
+x </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\text</span><span class="p">{</span><span class="nb">if </span><span class="p">}</span><span class="nb"> x &gt; </span><span class="m">0</span><span class="nb">.
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">cases</span><span class="p">}</span><span class="nb"> </span><span class="p">\]</span>
+</pre></table></code></div></div><div class="table-wrapper"><table><tbody><tr><td>amsmath 宏包还直接提供了多种排版矩阵的环境，包括不带定界符的 matrix，以及带各种定界符的矩阵 pmatrix( ( )、bmatrix( [ )、Bmatrix( { )、vmatrix(<td>)、Vmatrix(<td> <td>)。</table></div><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb">
+</span><span class="m">1</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">3</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="m">4</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">matrix</span><span class="p">}</span><span class="nb"> </span><span class="nv">\qquad</span><span class="nb">
+</span><span class="nv">\begin</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb">
+x</span><span class="p">_{</span><span class="m">11</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">12</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">1</span><span class="nb">n</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+x</span><span class="p">_{</span><span class="m">21</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">22</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="m">2</span><span class="nb">n</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+</span><span class="nv">\vdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\vdots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ddots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\vdots\\</span><span class="nb">
+x</span><span class="p">_{</span><span class="nb">n</span><span class="m">1</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="nb">n</span><span class="m">2</span><span class="p">}</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> </span><span class="nv">\ldots</span><span class="nb"> </span><span class="p">&amp;</span><span class="nb"> x</span><span class="p">_{</span><span class="nb">nn</span><span class="p">}</span><span class="nv">\\</span><span class="nb">
+</span><span class="nv">\end</span><span class="p">{</span><span class="nb">bmatrix</span><span class="p">}</span><span class="nb">
+</span><span class="p">\]</span>
+</pre></table></code></div></div><h3 id="六公式间距"><span class="mr-2">六、公式间距</span><a href="#六公式间距" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><img data-src="/images/latex/distances.png" alt="distances" style="zoom:50%;" data-proofer-ignore></p><p>绝大部分时候，数学公式中各元素的间距是根据符号类型自动生成的，需要我手动调整的情况极少。</p><p>一个常见的用途是修正积分的被积函数 f(x) 和微元 dx 之间的距离。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="p">\[</span><span class="nb">
+</span><span class="nv">\int</span><span class="p">_</span><span class="nb">a</span><span class="p">^</span><span class="nb">b f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nv">\mathrm</span><span class="p">{</span><span class="nb">d</span><span class="p">}</span><span class="nb">x
+</span><span class="nv">\qquad</span><span class="nb">
+</span><span class="nv">\int</span><span class="p">_</span><span class="nb">a</span><span class="p">^</span><span class="nb">b f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nv">\,\mathrm</span><span class="p">{</span><span class="nb">d</span><span class="p">}</span><span class="nb">x
+</span><span class="p">\]</span>
+</pre></table></code></div></div><p>另一个用途是生成多重积分号。如果我们直接连写两个 <code class="language-plaintext highlighter-rouge">\int</code>，之间的间距将会过宽，此时可以使用负间距 <code class="language-plaintext highlighter-rouge">\!</code> 修正之。不过 amsmath 提供了更方便的多重积分号，如二重积分 <code class="language-plaintext highlighter-rouge">\iint</code>、三 重积分 <code class="language-plaintext highlighter-rouge">\iiint</code> 等。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="k">\newcommand\diff</span><span class="p">{</span><span class="k">\,\mathrm</span><span class="p">{</span>d<span class="p">}}</span>
+<span class="nt">\begin{gather*}</span>
+<span class="k">\int\int</span> f(x)g(y)
+<span class="k">\diff</span> x <span class="k">\diff</span> y <span class="k">\\</span>
+<span class="k">\int\!\!\!\int</span>
+f(x)g(y) <span class="k">\diff</span> x <span class="k">\diff</span> y <span class="k">\\</span>
+<span class="k">\iint</span> f(x)g(y) <span class="k">\diff</span> x <span class="k">\diff</span> y <span class="k">\\</span>
+<span class="k">\iint\quad</span> <span class="k">\iiint\quad</span> <span class="k">\idotsint</span>
+<span class="nt">\end{gather*}</span>
+</pre></table></code></div></div><h3 id="七定理环境"><span class="mr-2">七、定理环境</span><a href="#七定理环境" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p><strong>LaTex 原始定理环境</strong></p><p>LaTex 提供了 一个基本的命令 <code class="language-plaintext highlighter-rouge">\newtheorem</code> 提供定理环境的定义：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre><td class="rouge-code"><pre><span class="k">\newtheorem</span><span class="p">{</span>⟨theorem environment⟩<span class="p">}{</span>⟨title⟩<span class="p">}</span>[⟨section-level⟩] 
+<span class="k">\newtheorem</span><span class="p">{</span>⟨theorem environment⟩<span class="p">}</span>[⟨counter⟩]<span class="p">{</span>⟨title⟩<span class="p">}</span>
+</pre></table></code></div></div><p>⟨theorem environment⟩ 为定理环境的名称。原始的 LaTex 里没有现成的定理环境，不加定义而直接使用很可能会出错。⟨title⟩ 是定理环境的标题（“定理”，“公理”等）。</p><p>定理的序号由两个可选参数之一决定，它们不能同时使用：</p><ul><li><p>⟨section level⟩ 为章节级别，如 chapter、section 等，定理序号成为章节的下一级序号</p><li><p>⟨counter⟩ 为用 <code class="language-plaintext highlighter-rouge">\newcounter</code> 自定义的计数器名称，定理序号由这个计数器管理</p></ul><p>如果两个可选参数都不用的话，则使用默认的与定理环境同名的计数器。</p><p>以下示例代码中，定义了一个 mythm 环境，其序号设为 section 的下一级序号。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre><span class="k">\newtheorem</span><span class="p">{</span>mythm<span class="p">}{</span>My Theorem<span class="p">}</span>[section]
+<span class="nt">\begin{mythm}</span><span class="k">\label</span><span class="p">{</span>thm:light<span class="p">}</span>
+The light speed in vacuum
+is <span class="p">$</span><span class="m">299</span><span class="nb">,</span><span class="m">792</span><span class="nb">,</span><span class="m">458</span><span class="nv">\,\mathrm</span><span class="p">{</span><span class="nb">m</span><span class="o">/</span><span class="nb">s</span><span class="p">}$</span>.
+<span class="nt">\end{mythm}</span>
+<span class="nt">\begin{mythm}</span>[Energy-momentum relation]
+The relationship of energy,
+momentum and mass is
+<span class="p">\[</span><span class="nb">E</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="o">=</span><span class="nb"> m</span><span class="p">_</span><span class="m">0</span><span class="p">^</span><span class="m">2</span><span class="nb"> c</span><span class="p">^</span><span class="m">4</span><span class="nb"> </span><span class="o">+</span><span class="nb"> p</span><span class="p">^</span><span class="m">2</span><span class="nb"> c</span><span class="p">^</span><span class="m">2</span><span class="p">\]</span>
+where <span class="p">$</span><span class="nb">c</span><span class="p">$</span> is the light speed
+described in theorem <span class="k">\ref</span><span class="p">{</span>thm:light<span class="p">}</span>.
+<span class="nt">\end{mythm}</span>
+</pre></table></code></div></div><p><strong>amsthm 宏包</strong></p><p>amsthm 提供了 <code class="language-plaintext highlighter-rouge">\theoremstyle</code> 命令支持定理格式的切换，在用 <code class="language-plaintext highlighter-rouge">\newtheorem</code> 命令定义定理环境之前使用。amsthm 预定义了三种格式用于 \theoremstyle:plain 和 LaTex 原始的格式 一致；definition 使用粗体标签、正体内容；remark 使用斜体标签、正体内容。</p><p>另外 amsthm 还支持用带星号的 <code class="language-plaintext highlighter-rouge">\newtheorem*</code> 定义不带序号的定理环境：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="k">\theoremstyle</span><span class="p">{</span>definition<span class="p">}</span> <span class="k">\newtheorem</span><span class="p">{</span>law<span class="p">}{</span>Law<span class="p">}</span>
+<span class="k">\theoremstyle</span><span class="p">{</span>plain<span class="p">}</span> <span class="k">\newtheorem</span><span class="p">{</span>jury<span class="p">}</span>[law]<span class="p">{</span>Jury<span class="p">}</span>
+<span class="k">\theoremstyle</span><span class="p">{</span>remark<span class="p">}</span> <span class="k">\newtheorem*</span><span class="p">{</span>mar<span class="p">}{</span>Margaret<span class="p">}</span>
+
+<span class="nt">\begin{law}</span><span class="k">\label</span><span class="p">{</span>law:box<span class="p">}</span>
+Don't hide in the witness box.
+<span class="nt">\end{law}</span>
+<span class="nt">\begin{jury}</span>[The Twelve]
+It could be you! So beware and
+see law~<span class="k">\ref</span><span class="p">{</span>law:box<span class="p">}</span>.<span class="nt">\end{jury}</span>
+<span class="nt">\begin{jury}</span>
+You will disregard the last
+statement.<span class="nt">\end{jury}</span>
+<span class="nt">\begin{mar}</span>No, No, No<span class="nt">\end{mar}</span>
+<span class="nt">\begin{mar}</span>Denis!<span class="nt">\end{mar}</span>
+</pre></table></code></div></div><p><strong>证明环境和证毕符号</strong></p><p>amsthm 还提供了一个 proof 环境用于排版定理的证明过程。proof 环境末尾自动加上一个证毕符号：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">\begin{proof}</span>
+For simplicity, we use
+<span class="p">\[</span><span class="nb">
+E</span><span class="o">=</span><span class="nb">mc</span><span class="p">^</span><span class="m">2</span><span class="nb">
+</span><span class="p">\]</span>
+That's it.
+<span class="nt">\end{proof}</span>
+</pre></table></code></div></div><p>如果行末是一个不带编号的公式， 符号会另起一行，这时可使用 <code class="language-plaintext highlighter-rouge">\qedhere</code> 命令将符号放在公式末尾：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{proof}</span>
+For simplicity, we use
+<span class="p">\[</span><span class="nb">
+E</span><span class="o">=</span><span class="nb">mc</span><span class="p">^</span><span class="m">2</span><span class="nb"> </span><span class="nv">\qedhere</span><span class="nb">
+</span><span class="p">\]</span>
+<span class="nt">\end{proof}</span>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/language/'>language</a>, <a href='/categories/latex/'>latex</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/latex/" class="post-tag no-text-decoration" >latex</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=LaTex+%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F+-+Chai+Yan&url=%2Flanguage%2Flatex%2Fposts%2Flatex_math%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=LaTex+%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F+-+Chai+Yan&u=%2Flanguage%2Flatex%2Fposts%2Flatex_math%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=%2Flanguage%2Flatex%2Fposts%2Flatex_math%2F&text=LaTex+%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F+-+Chai+Yan" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/tool/posts/mac_setup/">Mac 重装</a><li><a href="/linux/posts/locale/">Linux Locale</a><li><a href="/linux/posts/manjaro_i3/">Manjaro i3</a><li><a href="/board/bbb/posts/openwrt/">BeagleBone Black 安装 OpenWrt</a><li><a href="/collection/articles/posts/code/">编程</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/latex/">latex</a> <a class="post-tag" href="/tags/shell/">shell</a> <a class="post-tag" href="/tags/vim/">vim</a> <a class="post-tag" href="/tags/java8/">java8</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/manjaro/">manjaro</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/http/">http</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/json/">json</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/language/latex/posts/latex_install/"><div class="card-body"> <em class="small" data-ts="1628438400" data-df="ll" > Aug 9, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 介绍及安装</h3><div class="text-muted small"><p> LaTex 是基于 Tex 的排版系统，适用于生成高印刷质量的科技、数学和物理文档（用来发 paper）。 首先说下 Tex 是个啥，Tex 其实是个软件，它是由美国的计算机教授高德纳编写，用来给计算机、物理、数学等科学界学术文档进行排版的软件。高德纳最早开始自行编写 TeX 的原因，是由于当时的电脑排版技术十分粗糙，已经影响到他的巨著《计算机程序设计艺术》的印刷质量。因此他以典型的黑客思...</p></div></div></a></div><div class="card"> <a href="/language/latex/posts/latex_basic/"><div class="card-body"> <em class="small" data-ts="1629561600" data-df="ll" > Aug 22, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 基本概念</h3><div class="text-muted small"><p> [toc] 之前的章节说明了怎么安装 LaTex，如果觉着安装麻烦或者不想在本地安装，其实还有很多线上网站可以直接用。 Overleaf 就是一个在线编辑 LaTex 的网站，注册之后可以免费使用，虽然免费帐户有些同步、编译的限制，但对普通用户来说够用了。 之后的系列笔记我都会用 Overleaf 来测试，而系列笔记本身是对官方文档（一份(不太)简短的 LATEX2ε 介绍）的一个精减...</p></div></div></a></div><div class="card"> <a href="/language/latex/posts/latex_character/"><div class="card-body"> <em class="small" data-ts="1629561600" data-df="ll" > Aug 22, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 符号</h3><div class="text-muted small"><p> [toc] 本章介绍如何在 LaTex 中输入各种文字符号，包括标点符号等，以及控制文字断行和断页的方式。 编码 Unicode 是一个多国字符的集合，覆盖了几乎全球范围内的语言文字。 UTF-8 是 Unicode 的一套编码方案，一个字符由一个到四个字节编码，其中单字节字符的编码与 ASCII 编码兼容。 较为现代的 TEX 引擎，如 XƎTEX 和 LuaTEX，它们均原生支...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/language/latex/posts/latex_element/" class="btn btn-outline-primary" prompt="Older"><p>LaTex 文档元素</p></a> <a href="/language/latex/posts/latex_style/" class="btn btn-outline-primary" prompt="Newer"><p>LaTex 排版样式</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://github.com/chaiyao0216">Chai Yan</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/latex/">latex</a> <a class="post-tag" href="/tags/shell/">shell</a> <a class="post-tag" href="/tags/vim/">vim</a> <a class="post-tag" href="/tags/java8/">java8</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/manjaro/">manjaro</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/http/">http</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/json/">json</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>

@@ -1,0 +1,349 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.2.2" /><meta property="og:title" content="LaTeX 绘图" /><meta property="og:locale" content="en" /><meta name="description" content="[toc]" /><meta property="og:description" content="[toc]" /><link rel="canonical" href="/language/latex/posts/latex_tikz/" /><meta property="og:url" content="/language/latex/posts/latex_tikz/" /><meta property="og:site_name" content="Chai Yan" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2021-08-31T00:00:00+08:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="LaTeX 绘图" /><meta name="twitter:site" content="@twitter_username" /><meta name="google-site-verification" content="google_meta_tag_verification" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2021-08-31T00:00:00+08:00","datePublished":"2021-08-31T00:00:00+08:00","description":"[toc]","headline":"LaTeX 绘图","mainEntityOfPage":{"@type":"WebPage","@id":"/language/latex/posts/latex_tikz/"},"url":"/language/latex/posts/latex_tikz/"}</script><title>LaTeX 绘图 | Chai Yan</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Chai Yan"><meta name="application-name" content="Chai Yan"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/">Chai Yan</a></div><div class="site-subtitle font-italic">Personal technical blog, recording interesting things.</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/chaiyan0216" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/twitter_username" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['chaiyan2046','163.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>LaTeX 绘图</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>LaTeX 绘图</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1630339200" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Aug 31, 2021 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://github.com/chaiyao0216">Chai Yan</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="2535 words"> <em>14 min</em> read</span></div></div></div><div class="post-content"><p>[toc]</p><p>除了排版文字，LaTeX 也支持用代码表示图形。不同的扩展已经极大地丰富了 LaTeX 的图形功能，TikZ 就是其中之一。本章将了解一些基本的绘图功能。</p><p>一些特殊的绘图，如交换图、树状图甚至分子式和电路图也能够通过代码绘制，但较为复杂。</p><h3 id="一绘图语言简介"><span class="mr-2">一、绘图语言简介</span><a href="#一绘图语言简介" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>LaTeX 提供了原始的 picture 环境，能够绘制一些基本的图形如点、线、矩形、圆、Bézier 曲线等等，不过受制于 LaTeX 本身，它的绘图功能极为有限，效果也不够美观。当前较为流行的、用于 LaTeX 的绘图宏包 / 程序主要有：</p><ul><li><p>PSTricks</p><p>以 PostSciprt 语法为基础的绘图宏包，具有优秀的绘图能力。它对老式的 latex + dvips 编译命令支持最好，而现在的几种编译命令下使用起来都不够方便。</p><li><p>TikZ &amp; pgf</p><p>德国的 Till Tantau 教授在开发著名的 LaTeX 幻灯片文档类 beamer 时一并开发了绘图宏包 pgf，目的是令其能够在 pdflatex 或 xelatex 等不同的编译命令下都能使用。TikZ 是在 pgf 基础上封装的一个宏包，采用了类似 METAPOST 的语法，提供了方便的绘图命令，绘图能力不输 PSTricks。</p><li><p>METAPOST&amp; Asymptote</p><p>METAPOST 脱胎于高德纳为 TEX 配套开发的字体生成程序 METAFONT，具有优秀的绘图能力，并能够调用 TEX 引擎向图片中插入文字和公式。Asymptote 在 METAPOST的基础上更进一步，具有一定的类似 C 语言的编程能力，支持三维图形的绘制。</p></ul><h3 id="二tikz-绘图"><span class="mr-2">二、TikZ 绘图</span><a href="#二tikz-绘图" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>在导言区调用 tikz 宏包，就可以用以下命令和环境使用 TikZ 的绘图功能：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="k">\tikz</span><span class="na">[...]</span> ⟨tikz code⟩;
+<span class="k">\tikz</span><span class="na">[...]</span> <span class="p">{</span>⟨tikz code 1⟩; ⟨tikz code 2⟩; ...<span class="p">}</span>
+<span class="nt">\begin{tikzpicture}</span>[...]
+⟨tikz code 1⟩;
+⟨tikz code 2⟩;
+...
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>前一种用法为 <code class="language-plaintext highlighter-rouge">\tikz</code> 带单条绘图命令，以分号结束，一般用于在文字之间插入简单的图形；后两种用法较为常见，使用多条绘图命令，可以在 figure 等浮动体中使用。</p><p><strong>TikZ 坐标和路径</strong></p><p>TikZ 用直角坐标系或者极坐标系描述点的位置。</p><ul><li>直角坐标下，点的位置写作 (⟨x⟩,⟨y⟩)，坐标 ⟨x⟩ 和 ⟨y⟩ 可以用 LaTeX 支持的任意单位表示，缺省为 cm；<li>极坐标下，点的位置写作 (⟨θ⟩:⟨r⟩)，θ 为极角，单位是度。</ul><p>还可以为某个点命名：\coordinate (A) at (⟨coordinate⟩) 然后就可以使用 (A) 作为点的位置了。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) -- (30:1);
+<span class="k">\draw</span> (1,0) -- (2,1);
+<span class="k">\coordinate</span> (S) at (0,1);
+<span class="k">\draw</span> (S) -- (1,1);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>垂足形式：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\coordinate</span> (S) at (2,2);
+<span class="k">\draw</span><span class="na">[gray]</span> (-1,2) -- (S);
+<span class="k">\draw</span><span class="na">[gray]</span> (2,-1) -- (S);
+<span class="k">\draw</span><span class="na">[red]</span> (0,0) -- (0,0 -| S);
+<span class="k">\draw</span><span class="na">[blue]</span> (0,0) -- (0,0 |- S);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>最基本的路径为两点之间连线，如 (⟨x1⟩,⟨y1⟩) – (⟨x2⟩,⟨y2⟩)，可以连用表示多个连线（折线）。连续使用连线时，可以使用 cycle 令路径回到起点，生成闭合的路径：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) -- (1,1) -- (2,0) -- cycle;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>多条路径可用于同一条画图命令中，以空格分隔：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) -- (0,1) (1,0) -- (1,1) -- (2,0) -- cycle;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>其它常用图形如下：</p><ul><li><p>矩形、圆和椭圆</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) rectangle (1.5,1);
+<span class="k">\draw</span> (2.5,0.5) circle [radius=0.5];
+<span class="k">\draw</span> (4.5,0.5) ellipse [x radius=1,y radius=0.5];
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>直角、圆弧、椭圆弧</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) |- (1,1);
+<span class="k">\draw</span> (1,0) -| (2,1);
+<span class="k">\draw</span> (4,0) arc (0:135:1);
+<span class="k">\draw</span> (6,0) arc (0:135:1 and 0.5);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>正弦、余弦曲线（1/4 周期）</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) sin (1,1);
+<span class="k">\draw</span> (0,1) sin (1,0);
+<span class="k">\draw</span> (2,1) cos (3,0);
+<span class="k">\draw</span> (2,0) cos (3,1);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>抛物线，用 bend 控制顶点</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) parabola (1,2);
+<span class="k">\draw</span> (2,0) parabola bend (2.25,-0.25) (3,2);
+<span class="k">\draw</span> (4,0) parabola bend (4.75,2.25) (5,2);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>二次和三次 Bézier 曲线，分别使用一个和两个控制点</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) .. controls (2,1) and (3,1) .. (3,0);
+<span class="k">\draw</span> (4,0) .. controls (5,1) .. (5,0);
+<span class="k">\draw</span><span class="na">[help lines]</span> (0,0) -- (2,1) -- (3,1) -- (3,0) (4,0) -- (5,1) -- (5,0);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>网格、函数图像，网格可用 step 参数控制网格大小，函数图像用 domain 参数控制定义域</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[help lines,step=0.5]</span> (-1,-1) grid (1,1);
+<span class="k">\draw</span><span class="na">[-&gt;]</span> (-1.5,0) -- (1.5,0);
+<span class="k">\draw</span><span class="na">[-&gt;]</span> (0,-1.5) -- (0,1.5);
+<span class="k">\draw</span><span class="na">[domain=-1:1]</span> plot(<span class="k">\x</span>,<span class="p">{</span><span class="k">\x*\x*</span>2 -1<span class="p">}</span>);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div></ul><p><strong>TikZ 绘图命令和参数</strong></p><p>TikZ 提供了 <code class="language-plaintext highlighter-rouge">\fill</code> 命令用来填充图形，<code class="language-plaintext highlighter-rouge">\filldraw</code> 命令则同时填充和描边。除了矩形、圆等现成的闭合图形外，<code class="language-plaintext highlighter-rouge">\fill</code> 和 <code class="language-plaintext highlighter-rouge">\filldraw</code> 命令也能够填充人为构造的闭合路径。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="k">\draw</span><span class="na">[...]</span> ⟨path⟩;
+<span class="k">\fill</span><span class="na">[...]</span> ⟨path⟩;
+<span class="k">\filldraw</span><span class="na">[...]</span> ⟨path⟩;
+</pre></table></code></div></div><p>绘图参数可作为可选参数用在 tikzpiture 环境或 <code class="language-plaintext highlighter-rouge">\tikz</code> 命令时，参数会影响到所有具体的绘图命令；用在单个绘图命令 <code class="language-plaintext highlighter-rouge">\draw</code>、<code class="language-plaintext highlighter-rouge">\filldraw</code> 等时，只对这个命令起效。</p><p>TikZ 有数不清的绘图参数，这些参数令 TikZ 能够绘制丰富多彩的图像，同时也令 TikZ 难以精通。以下示例常用的一些绘图参数。</p><ul><li><p>color/draw/fill=⟨color⟩ 为 <code class="language-plaintext highlighter-rouge">\draw</code> 或 <code class="language-plaintext highlighter-rouge">\fill</code> 等命令指定颜色。draw 和 fill 分别指定描边和填充的颜色，而 color 同时指定，可以省略 color= 直接写颜色名称</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>[thick]
+<span class="k">\draw</span><span class="na">[blue]</span> (0,0) rectangle (1,1);
+<span class="k">\fill</span><span class="na">[green]</span> (2,0) rectangle (3,1);
+<span class="k">\filldraw</span><span class="na">[fill=yellow,draw=red]</span> (4,0.5) circle [radius=0.5];
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>thick=⟨length⟩/thin/semithick/… 指定线条的粗细</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[ultra thin]</span> (0,0)--(0,2);
+<span class="k">\draw</span><span class="na">[very thin]</span> (0.5,0)--(0.5,2);
+<span class="k">\draw</span><span class="na">[thin]</span> (1,0)--(1,2);
+<span class="k">\draw</span><span class="na">[semithick]</span> (1.5,0)--(1.5,2);
+<span class="k">\draw</span><span class="na">[thick]</span> (2,0)--(2,2);
+<span class="k">\draw</span><span class="na">[very thick]</span> (2.5,0)--(2.5,2);
+<span class="k">\draw</span><span class="na">[ultra thick]</span> (3,0)--(3,2);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>solid/dashed/dotted/dash dot/dash dot dot 指定线条类型（实线、虚线、点划线等）。与 dashed 对应地有 densely dashed 和 loosely dashed，后三种类型同理。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[dashed]</span> (0,0) -- (0,2);
+<span class="k">\draw</span><span class="na">[dotted]</span> (0.5,0) -- (0.5,2);
+<span class="k">\draw</span><span class="na">[dash dot]</span> (1,0) -- (1,2);
+<span class="k">\draw</span><span class="na">[dash dot dot]</span> (1.5,0) -- (1.5,2);
+<span class="k">\draw</span><span class="na">[densely dotted]</span> (2,0) -- (3,2) -- (4,0) -- cycle;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>⟨arrow⟩-⟨arrow⟩ 指定线条首尾的箭头形式。复杂的箭头形式需要在导言区使用 <code class="language-plaintext highlighter-rouge">\usetikz-library {arrows.meta}</code></p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>[thick]
+<span class="k">\draw</span><span class="na">[-&gt;]</span> (0,4) -- (3,4);
+<span class="k">\draw</span><span class="na">[-&gt;&gt;]</span> (0,3.5) -- (3,3.5);
+<span class="k">\draw</span><span class="na">[-&gt;|]</span> (0,3) -- (3,3);
+<span class="k">\draw</span><span class="na">[&lt;-]</span> (0,2.5) -- (3,2.5);
+<span class="k">\draw</span><span class="na">[&lt;-&gt;]</span> (0,2) -- (3,2);
+<span class="k">\draw</span><span class="na">[&gt;-&gt;|]</span> (0,1.5) -- (3,1.5);
+<span class="k">\draw</span><span class="na">[-stealth]</span> (0,1) -- (3,1);
+<span class="k">\draw</span><span class="na">[-latex]</span> (0,0.5) -- (3,0.5);
+<span class="k">\draw</span><span class="na">[-to]</span> (0,0) -- (3,0);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>rounded corners[=⟨radius⟩]/sharp corners 将路径转向处绘制成圆角/直角。可选参数 ⟨radius⟩ 控制圆角的半径，可以对某一段路径直接使用</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[rounded corners]</span> (0,0) rectangle (1,1);
+<span class="k">\draw</span> (2,0) -- (2,1) [rounded corners=.3cm] -- (3,1) -- (3.5,0) [sharp corners] -- cycle;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>scale/xshift/yshift/xslant/yslant/rotate 设定图形的缩放、位移和旋转</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[help lines]</span>(0,0) rectangle (1,1);
+<span class="k">\draw</span><span class="na">[scale=1.5]</span> (0,0) rectangle (1,1);
+<span class="k">\draw</span><span class="na">[rotate=30]</span> (0,0) rectangle (1,1);
+<span class="k">\draw</span><span class="na">[help lines]</span>(2,0) rectangle (3,1);
+<span class="k">\draw</span><span class="na">[yshift=4pt]</span>(2,0) rectangle (3,1);
+<span class="k">\draw</span><span class="na">[help lines]</span>(4,0) rectangle (5,1);
+<span class="k">\draw</span><span class="na">[xslant=0.4]</span>(4,0) rectangle (5,1);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div></ul><p>为了重复利用绘图参数，减少代码冗余，TikZ 引入了“样式”的概念，可以定义一个样式包含绘图参数，然后将样式作为一个参数用于绘图：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+[myarrow/.style=<span class="p">{</span>blue,thick,-&gt;<span class="p">}</span>]
+<span class="k">\draw</span> (0,0)--(0,1)--(2,1);
+<span class="k">\draw</span><span class="na">[myarrow]</span> (0,0)--(2,1);
+<span class="k">\draw</span><span class="na">[myarrow,dotted]</span> (0,0)--(2,0)--(2,1);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>以及提供了 scope 环境，令绘图参数或样式在局部生效：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) rectangle (2.5, 2.5);
+<span class="nt">\begin{scope}</span>[thick,scale=0.5]
+<span class="k">\draw</span> (0,0) rectangle (2.5, 2.5);
+<span class="nt">\end{scope}</span>
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p><strong>TikZ 文字结点</strong></p><p>TikZ 用 <code class="language-plaintext highlighter-rouge">\node</code> 命令绘制文字结点：<code class="language-plaintext highlighter-rouge">\node[⟨options⟩] (⟨name⟩) at (⟨coordinate⟩) {⟨text⟩};</code>。</p><p>(⟨name⟩) 为结点命名，类似 <code class="language-plaintext highlighter-rouge">\coordinate</code>；at (⟨coordinate⟩) 指定结点的位置。这两者和前面的 ⟨options⟩ 都可以省略，只有 ⟨text⟩ 是必填的。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\node</span> (A) at (0,0) <span class="p">{</span>A<span class="p">}</span>;
+<span class="k">\node</span> (B) at (1,0) <span class="p">{</span>B<span class="p">}</span>;
+<span class="k">\node</span> (C) at (60:1) <span class="p">{</span>C<span class="p">}</span>;
+<span class="k">\draw</span> (A) -- (B) -- (C) -- (A);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>”TikZ 绘图命令和参数“中的参数可用于 <code class="language-plaintext highlighter-rouge">\node</code> 命令。除此之外，<code class="language-plaintext highlighter-rouge">\node</code> 还有一些特定的参数：</p><ul><li><p>anchor=⟨position⟩ 令结点的某个角落 ⟨position⟩ 与 ⟨coordinate⟩ 对应</p><li><p>centered / above / below / left / right / above left / … [=⟨length⟩] 与 anchor 等效的选项，可选的 ⟨length⟩ 为节点相对于 ⟨coordinate⟩ 的距离</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\coordinate</span> (A) at (1,1);
+<span class="k">\fill</span> (A) circle[radius=2pt];
+<span class="k">\node</span><span class="na">[draw,anchor=south]</span> at (A) <span class="p">{</span>a<span class="p">}</span>;
+<span class="k">\node</span><span class="na">[draw,below right=4pt]</span> at (A) <span class="p">{</span>b<span class="p">}</span>;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>shape=⟨shape⟩ 结点的形状，默认可用 rectangle 和 circle，可省略 shape= 直接写。在导言区使用命令 <code class="language-plaintext highlighter-rouge">\usetikzlibrary{shapes.geometric}</code> 可用更多的形状</p><li><p>text=⟨color⟩ 结点文字的颜色</p><li><p>node font=⟨font command⟩ 结点文字的字体，形如 <code class="language-plaintext highlighter-rouge">\bfseries</code> 或 <code class="language-plaintext highlighter-rouge">\itshape</code> 等</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\node</span><span class="na">[circle,fill=blue,text=white,node font={\bfseries}]</span> (A) at (0,0) <span class="p">{</span>A node<span class="p">}</span>;
+<span class="k">\node</span><span class="na">[rectangle,rounded corners,draw=gray,node font={\sffamily\slshape}]</span> (B) at (2,0) <span class="p">{</span>B node<span class="p">}</span>;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><li><p>inner sep=⟨length⟩ / outer sep=⟨length⟩ 结点边界向外和向内的额外距离</p><li><p>minimum size=⟨length⟩ / minimum height=⟨length⟩ / minimum width=⟨length⟩ 结点的最小大小或最小高度/宽度</p></ul><p><code class="language-plaintext highlighter-rouge">\node</code> 命令不仅为文字结点的位置命名，在 <code class="language-plaintext highlighter-rouge">\draw</code> 等命令中还可以使用某个结点的相对位置，以“东南西北”（east/south/west/north）的方式命名：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0) circle[radius=1];
+<span class="k">\fill</span> (0,0) circle[radius=2pt];
+<span class="k">\node</span><span class="na">[draw]</span> (P) at (15:2) <span class="p">{</span>center<span class="p">}</span>;
+<span class="k">\draw</span><span class="na">[dotted]</span> (0,0) -- (P.west);
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p><code class="language-plaintext highlighter-rouge">\node</code> 命令的一种等效用法是在 <code class="language-plaintext highlighter-rouge">\draw</code> 等命令的路径中使用 node，不仅可以对某个位置标记节点，还能够对线标记：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre>  <span class="nt">\begin{tikzpicture}</span>
+  <span class="k">\draw</span> (2,1.5) node[above] <span class="p">{$</span><span class="nb">A</span><span class="p">$}</span>
+  -- node[above left] <span class="p">{$</span><span class="nb">c</span><span class="p">$}</span>
+  (0,0) node[left] <span class="p">{$</span><span class="nb">B</span><span class="p">$}</span>
+  -- node[below] <span class="p">{$</span><span class="nb">a</span><span class="p">$}</span>
+  (2.5,0) node[right] <span class="p">{$</span><span class="nb">C</span><span class="p">$}</span>
+  -- node[above right] <span class="p">{$</span><span class="nb">b</span><span class="p">$}</span>
+  cycle;
+  <span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>下面是一个较为复杂的例子，综合前面介绍过的各种路径、形状、文字结点和参数设置，结果挺漂亮的：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span><span class="na">[-stealth,line width=0.2pt]</span> (-0.5,0) -- (4.5,0);
+<span class="k">\draw</span><span class="na">[-stealth,line width=0.2pt]</span> (0,-0.5) -- (0,2.5);
+<span class="k">\coordinate</span> (a) at (0.5,1.9);
+<span class="k">\coordinate</span> (b) at (4,1.2);
+<span class="k">\node</span><span class="na">[below]</span> (a0) at (a |- 0,0) <span class="p">{$</span><span class="nb">a</span><span class="p">$}</span>;
+<span class="k">\node</span><span class="na">[below]</span> (b0) at (b |- 0,0) <span class="p">{$</span><span class="nb">b</span><span class="p">$}</span>;
+<span class="k">\filldraw</span><span class="na">[fill=gray!20,draw,thick]</span> (a0) -- (a) .. controls (1,2.8) and (2.7,0.4) .. (b) -- (b0) -- cycle;
+<span class="k">\node</span><span class="na">[above right,outer sep=0.2cm,rounded corners,fill=green!20,draw=gray,text=blue!60!black,scale=0.6]</span>
+at (b) <span class="p">{$</span><span class="nv">\displaystyle</span><span class="nb"> </span><span class="nv">\int</span><span class="p">_</span><span class="nb">a</span><span class="p">^</span><span class="nb">b </span><span class="p">{</span><span class="nb">f</span><span class="o">(</span><span class="nb">x</span><span class="o">)</span><span class="nv">\,\mathrm</span><span class="p">{</span><span class="nb">d</span><span class="p">}</span><span class="nb">x</span><span class="p">}</span><span class="nb"> </span><span class="o">=</span><span class="nb"> F</span><span class="o">(</span><span class="nb">b</span><span class="o">)</span><span class="nb"> </span><span class="o">-</span><span class="nb"> F</span><span class="o">(</span><span class="nb">a</span><span class="o">)</span><span class="p">$}</span>;
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p><strong>在 TikZ 中使用循环</strong></p><p>TikZ 通过 pgffor 功能宏包实现了简单的循环功能，语法为：<code class="language-plaintext highlighter-rouge">\foreach \a in {⟨list⟩} {⟨commands⟩}</code>。</p><p><code class="language-plaintext highlighter-rouge">\a</code> 为变量，在 {⟨commands⟩} 中使用 <code class="language-plaintext highlighter-rouge">\a</code> 完成循环。</p><p>⟨list⟩ 可以直接将所有值写出来，如 1,2,3,4；也可以写成省略形式，如 1,2,…,10。</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\draw</span> (0,0)--(5,0);
+
+<span class="k">\foreach</span> <span class="k">\i</span> in <span class="p">{</span>0.0,0.1,...,5.0<span class="p">}</span>
+<span class="p">{</span><span class="k">\draw</span><span class="na">[very thin]</span> (<span class="k">\i</span>,0)--(<span class="k">\i</span>,0.15);<span class="p">}</span>
+
+<span class="k">\foreach</span> <span class="k">\I</span> in <span class="p">{</span>0,1,2,3,4,5<span class="p">}</span>
+<span class="p">{</span><span class="k">\draw</span> (<span class="k">\I</span>,0)--(<span class="k">\I</span>,0.25) node[above] <span class="p">{</span><span class="k">\I</span><span class="p">}</span>;<span class="p">}</span>
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div><p>变量 pair 循环：</p><div class="language-latex highlighter-rouge"><div class="code-header"> <span data-label-text="LaTex"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">\begin{tikzpicture}</span>
+<span class="k">\foreach</span> <span class="k">\n</span>/<span class="k">\t</span> in <span class="p">{</span>0/<span class="k">\alpha</span>,1/<span class="k">\beta</span>,2/<span class="k">\gamma</span><span class="p">}</span>
+<span class="p">{</span><span class="k">\node</span><span class="na">[circle,fill=lightgray,draw]</span> at (<span class="k">\n</span>,0) <span class="p">{$</span><span class="nv">\t</span><span class="p">$}</span>;<span class="p">}</span>
+<span class="nt">\end{tikzpicture}</span>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/language/'>language</a>, <a href='/categories/latex/'>latex</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/latex/" class="post-tag no-text-decoration" >latex</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=LaTeX+%E7%BB%98%E5%9B%BE+-+Chai+Yan&url=%2Flanguage%2Flatex%2Fposts%2Flatex_tikz%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=LaTeX+%E7%BB%98%E5%9B%BE+-+Chai+Yan&u=%2Flanguage%2Flatex%2Fposts%2Flatex_tikz%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=%2Flanguage%2Flatex%2Fposts%2Flatex_tikz%2F&text=LaTeX+%E7%BB%98%E5%9B%BE+-+Chai+Yan" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/tool/posts/mac_setup/">Mac 重装</a><li><a href="/linux/posts/locale/">Linux Locale</a><li><a href="/linux/posts/manjaro_i3/">Manjaro i3</a><li><a href="/board/bbb/posts/openwrt/">BeagleBone Black 安装 OpenWrt</a><li><a href="/collection/articles/posts/code/">编程</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/latex/">latex</a> <a class="post-tag" href="/tags/shell/">shell</a> <a class="post-tag" href="/tags/vim/">vim</a> <a class="post-tag" href="/tags/java8/">java8</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/manjaro/">manjaro</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/http/">http</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/json/">json</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mt-5 mb-2 mb-sm-4"><h3 class="pt-2 mt-1 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/language/latex/posts/latex_install/"><div class="card-body"> <em class="small" data-ts="1628438400" data-df="ll" > Aug 9, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 介绍及安装</h3><div class="text-muted small"><p> LaTex 是基于 Tex 的排版系统，适用于生成高印刷质量的科技、数学和物理文档（用来发 paper）。 首先说下 Tex 是个啥，Tex 其实是个软件，它是由美国的计算机教授高德纳编写，用来给计算机、物理、数学等科学界学术文档进行排版的软件。高德纳最早开始自行编写 TeX 的原因，是由于当时的电脑排版技术十分粗糙，已经影响到他的巨著《计算机程序设计艺术》的印刷质量。因此他以典型的黑客思...</p></div></div></a></div><div class="card"> <a href="/language/latex/posts/latex_basic/"><div class="card-body"> <em class="small" data-ts="1629561600" data-df="ll" > Aug 22, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 基本概念</h3><div class="text-muted small"><p> [toc] 之前的章节说明了怎么安装 LaTex，如果觉着安装麻烦或者不想在本地安装，其实还有很多线上网站可以直接用。 Overleaf 就是一个在线编辑 LaTex 的网站，注册之后可以免费使用，虽然免费帐户有些同步、编译的限制，但对普通用户来说够用了。 之后的系列笔记我都会用 Overleaf 来测试，而系列笔记本身是对官方文档（一份(不太)简短的 LATEX2ε 介绍）的一个精减...</p></div></div></a></div><div class="card"> <a href="/language/latex/posts/latex_character/"><div class="card-body"> <em class="small" data-ts="1629561600" data-df="ll" > Aug 22, 2021 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>LaTex 符号</h3><div class="text-muted small"><p> [toc] 本章介绍如何在 LaTex 中输入各种文字符号，包括标点符号等，以及控制文字断行和断页的方式。 编码 Unicode 是一个多国字符的集合，覆盖了几乎全球范围内的语言文字。 UTF-8 是 Unicode 的一套编码方案，一个字符由一个到四个字节编码，其中单字节字符的编码与 ASCII 编码兼容。 较为现代的 TEX 引擎，如 XƎTEX 和 LuaTEX，它们均原生支...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/language/latex/posts/latex_tool/" class="btn btn-outline-primary" prompt="Older"><p>LaTex 特色工具和功能</p></a> <a href="/other/posts/wubi/" class="btn btn-outline-primary" prompt="Newer"><p>五笔要点记录</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2022 <a href="https://github.com/chaiyao0216">Chai Yan</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/latex/">latex</a> <a class="post-tag" href="/tags/shell/">shell</a> <a class="post-tag" href="/tags/vim/">vim</a> <a class="post-tag" href="/tags/java8/">java8</a> <a class="post-tag" href="/tags/mac/">mac</a> <a class="post-tag" href="/tags/manjaro/">manjaro</a> <a class="post-tag" href="/tags/git/">git</a> <a class="post-tag" href="/tags/http/">http</a> <a class="post-tag" href="/tags/jekyll/">jekyll</a> <a class="post-tag" href="/tags/json/">json</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script>
